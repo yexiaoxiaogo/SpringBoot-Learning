@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="compute-service/compute-api-server/src/main/java"/>
+	<classpathentry kind="src" path="compute-service/compute-api-server/src/test/java"/>
+	<classpathentry kind="src" path="compute-service/compute-api/src/main/java"/>
+	<classpathentry kind="src" path="consumer/src/main/java"/>
+	<classpathentry kind="src" path="consumer/src/test/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
