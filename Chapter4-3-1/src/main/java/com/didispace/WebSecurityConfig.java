@@ -11,7 +11,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+	@Autowired
+	LoginService loginService;
     @Override
+    // @formatter:off
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
@@ -25,12 +28,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .logout()
                 .permitAll();
     }
+    // @formatter:on
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-            .inMemoryAuthentication()
-                .withUser("user").password("password").roles("USER");
+    	auth.userDetailsService(loginService);
+//        auth
+//            .inMemoryAuthentication()
+//                .withUser("user").password("password").roles("USER");
     }
 
 }
